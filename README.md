@@ -29,6 +29,45 @@ This command will run tcpdump with the following options:
 Now, let's take a detailed look at the packet information that this command has returned: <br/>
 <img src="https://imgur.com/CjNEc71.png"<br />
 
+<h3>Exploring network packet details</h3>
+
+In this example, you’ll identify some of the properties that tcpdump outputs for the packet capture data you’ve just seen.
+1.	In the example data at the start of the packet output, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes:
+
+<p align="center">
+<img src="https://imgur.com/5G1C1S1.png"<br />
+
+2.	On the next line, the first field is the packet's timestamp, followed by the protocol type, IP:
+
+<p align="center">
+<img src="https://imgur.com/gsOEwZP.png"<br />
+
+3. The verbose option, -v, has provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes:
+
+<p align="center">
+<img src="https://imgur.com/6XcgNke.png"<br />
+
+The specific details about these fields are beyond the scope of this lab. But you should know that these are properties that relate to the IP network packet.
+
+4.	In the next section, the data shows the systems that are communicating with each other:
+
+<p align="center">
+<img src="https://imgur.com/fZ1vqMA.png"<br />
+
+   By default, tcpdump will convert IP addresses into names, as in the screenshot. The name of your Linux virtual machine, also included in the command prompt, appears here as the source for one packet and the destination for the second packet. In your live data, the name will be a different set of letters and numbers.
+The direction of the arrow (>) indicates the direction of the traffic flow in this packet. Each system name includes a suffix with the port number (.5000 in the screenshot), which is used by the source and the destination systems for this packet.
+
+5.	The remaining data filters the header data for the inner TCP packet:
+
+<p align="center">
+<img src="https://imgur.com/i7LrFx5.png"<br />
+
+The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data.
+The next field is the TCP checksum value, which is used for detecting errors in the data.
+This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.
+
+
+
 
 
 In this task, network analyst must identify the network interfaces that can be used to capture network packet data by using the command "sudo tcpdump -D"(can also use "sudo ifconfig") to identify the interfaces that are available. 
