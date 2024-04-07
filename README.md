@@ -58,7 +58,7 @@ The next field is the TCP checksum value, which is used for detecting errors in 
 <h2>Task 3. Capture network traffic with tcpdump</h2>
 
 In this task, we will use tcpdump to save the captured network data to a packet capture file by using a filter and other tcpdump configuration options to save a small sample that contains only web (TCP port 80) network packet data.
-1.	Capture packet data into a file called capture.pcap with the following command: sudo "tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &"
+1.	Capture packet data into a file called capture.pcap with the following command: "sudo tcpdump -i eth0 -nn -c9 port 80 -w capture.pcap &"
 
 This command will run tcpdump in the background with the following options:
 
@@ -79,7 +79,7 @@ When the curl command is used like this to open a website, it generates some HTT
 <h2>Task 4. Filter the captured packet data</h2>
 In this task, we will use tcpdump to filter data from the packet capture file we saved previously. 
 
-1. The tcpdump command will enable us to filter the packet header data from the capture.pcap capture file using the following command: sudo "tcpdump -nn -r capture.pcap -v"
+1. The tcpdump command will enable us to filter the packet header data from the capture.pcap capture file using the following command: "sudo tcpdump -nn -r capture.pcap -v"
 
 This command will run tcpdump with the following options:
 
@@ -93,7 +93,7 @@ note that we must specify the "-nn" switch again here, as we want to make sure t
 This command returns output similar to the following: <br/>
 <img src="https://imgur.com/5u0PJEC.png"<br />
 
-2.	Finally, we will now use the tcpdump command to filter the extended packet data from the capture.pcap capture file using the following command: sudo "tcpdump -nn -r capture.pcap -X"
+2.	Finally, we will now use the tcpdump command to filter the extended packet data from the capture.pcap capture file using the following command: "sudo tcpdump -nn -r capture.pcap -X"
 
 This command will run tcpdump with the following options:
 - <b>-nn: Disable port and protocol name lookup.</b>
