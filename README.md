@@ -1,4 +1,4 @@
-<h1>Packet Capture and Analyzer</h1>
+<h1>Packet Capturing and Analysis</h1>
 
 <h2>Description</h2>
 As a security or network analyst, it’s important to know how to capture and filter network traffic in a Linux environment. It is also vital to know the basic concepts associated with network interfaces. As such, this project consists of performing tasks associated with using tcpdump to capture network traffic from a Linux virtual machine by capturing the data in a packet capture (p-cap) file and then examining the contents of the captured packet data to focus on specific types of traffic.
