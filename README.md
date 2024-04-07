@@ -11,7 +11,7 @@ In this task, we will identify the network interfaces that can be used to captur
 
 <p align="center">
 This command returns output similar to the following: <br/>
-<img src="https://imgur.com/IW4taTJ.png"<br />
+<img src="https://imgur.com/7aQkhJw.png"<br />
 
 The Ethernet network interface is identified by the entry with the "eth" prefix.
 
@@ -27,13 +27,13 @@ This command will run tcpdump with the following options:
 
 <p align="center">
 Now, let's take a detailed look at the packet information that this command has returned: <br/>
-<img src="https://imgur.com/CjNEc71.png"<br />
+<img src="https://imgur.com/11jjcCo.png"<br />
 
 <h3>Exploring network packet details</h3>
 
 1. In this example, we’ll identify some of the properties that tcpdump outputs for the packet capture data we’ve just seen. For example, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes:
 <p align="center">
-<img src="https://imgur.com/5G1C1S1.png"<br />
+<img src="https://imgur.com/BCpPiTZ.png"<br />
 
 2.	On the next line, the first field is the packet's timestamp, followed by the protocol type, IP:
 <p align="center">
@@ -41,15 +41,15 @@ Now, let's take a detailed look at the packet information that this command has 
 
 3. The verbose option, -v, has provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes:
 <p align="center">
-<img src="https://imgur.com/6XcgNke.png"<br />
+<img src="https://imgur.com/6awA74S.png"<br />
 
 4.	In the next section, the data shows the systems that are communicating with each other. The direction of the arrow (>) indicates the direction of the traffic flow:
 <p align="center">
-<img src="https://imgur.com/fZ1vqMA.png"<br />
+<img src="https://imgur.com/3xyZeLc.png"<br />
 
 5.	The remaining data filters the header data for the inner TCP packet:
 <p align="center">
-<img src="https://imgur.com/i7LrFx5.png"<br />
+<img src="https://imgur.com/7mSYf9H.png"<br />
 
 The flags field identifies TCP flags. In this case, the P represents the push flag and the period indicates it's an ACK flag. This means the packet is pushing out data.
 The next field is the TCP checksum value, which is used for detecting errors in the data. This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.
@@ -77,7 +77,9 @@ When the curl command is used like this to open a website, it generates some HTT
 3.	Verify that packet data has been captured using the following command: "ls -l capture.pcap"
 
 <h2>Task 4. Filter the captured packet data</h2>
-In this task, we will use tcpdump to filter data from the packet capture file we saved previously. The tcpdump command will enable us to filter the packet header data from the capture.pcap capture file using the following command: sudo "tcpdump -nn -r capture.pcap -v"
+In this task, we will use tcpdump to filter data from the packet capture file we saved previously. 
+
+1. The tcpdump command will enable us to filter the packet header data from the capture.pcap capture file using the following command: sudo "tcpdump -nn -r capture.pcap -v"
 
 This command will run tcpdump with the following options:
 
@@ -89,24 +91,15 @@ note that we must specify the "-nn" switch again here, as we want to make sure t
 
 <p align="center">
 This command returns output similar to the following: <br/>
-<img src="https://imgur.com/ZtzIL8i.png"<br />
+<img src="https://imgur.com/5u0PJEC.png"<br />
 
+2.	Finally, we will now use the tcpdump command to filter the extended packet data from the capture.pcap capture file using the following command: sudo "tcpdump -nn -r capture.pcap -X"
 
+This command will run tcpdump with the following options:
+- <b>-nn: Disable port and protocol name lookup.</b>
+- <b>-r: Read capture data from the named file.</b>
+- <b>-X: Display the hexadecimal and ASCII output format packet data. Security analysts can analyze hexadecimal and ASCII output to detect patterns or anomalies during malware analysis or forensic analysis.</b>
 
-
-
-
-In this task, network analyst must identify the network interfaces that can be used to capture network packet data by using the command "sudo tcpdump -D"(can also use "sudo ifconfig") to identify the interfaces that are available. 
-
-<p align="center">
-This command returns output similar to the following: <br/>
-<img src="https://imgur.com/ZtzIL8i.png"<br />
-
-<h2>Stage I: Define business and security objectives</h2>
-A shopping application like this will need to process payments. Based on this description, we know certain technologies are required to keep information private and secure and that everything will need to be compliant with PCI-DSS. Accordingly, the DevSecOps team will have the analyze the following requirements: 
-
-- <b>Users can create member profiles internally or by connecting external accounts.</b>
-- <b>The app must process financial transactions.</b>
-- <b>The app should be in compliance with PCI-DSS.</b>
+Note that Hexadecimal, also known as hex or base 16, uses 16 symbols to represent values, including the digits 0-9 and letters A, B, C, D, E, and F. American Standard Code for Information Interchange (ASCII) is a character encoding standard that uses a set of characters to represent text in digital form.
 
 
