@@ -72,22 +72,4 @@ connecting external accounts.</b>
 - <b>The app must process financial transactions.</b>
 - <b>The app should be in compliance with PCI-DSS.</b>
 
-<h2>Stage II: Define the technical scope</h2>
 
-<h2>Stage III: Decompose the application</h2>
-
-<h2>Stage IV: Threat analysis</h2>
-
-<h2>Stage V: Vulnerability analysis</h2>
-
-<h2>Stage VI: Attack modeling</h2>
-
-<h2>Stage VII: Risk analysis and impact</h2>
-
-<h2>Program walk-through:</h2>
-
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
