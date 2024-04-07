@@ -32,27 +32,22 @@ Now, let's take a detailed look at the packet information that this command has 
 <h3>Exploring network packet details</h3>
 
 1. In this example, we’ll identify some of the properties that tcpdump outputs for the packet capture data we’ve just seen. For example, tcpdump reported that it was listening on the eth0 interface, and it provided information on the link type and the capture size in bytes:
-
 <p align="center">
 <img src="https://imgur.com/5G1C1S1.png"<br />
 
 2.	On the next line, the first field is the packet's timestamp, followed by the protocol type, IP:
-
 <p align="center">
 <img src="https://imgur.com/gsOEwZP.png"<br />
 
 3. The verbose option, -v, has provided more details about the IP packet fields, such as TOS, TTL, offset, flags, internal protocol type (in this case, TCP (6)), and the length of the outer IP packet in bytes:
-
 <p align="center">
 <img src="https://imgur.com/6XcgNke.png"<br />
 
 4.	In the next section, the data shows the systems that are communicating with each other. The direction of the arrow (>) indicates the direction of the traffic flow:
-
 <p align="center">
 <img src="https://imgur.com/fZ1vqMA.png"<br />
 
 5.	The remaining data filters the header data for the inner TCP packet:
-
 <p align="center">
 <img src="https://imgur.com/i7LrFx5.png"<br />
 
@@ -60,7 +55,7 @@ The flags field identifies TCP flags. In this case, the P represents the push fl
 The next field is the TCP checksum value, which is used for detecting errors in the data. This section also includes the sequence and acknowledgment numbers, the window size, and the length of the inner TCP packet in bytes.
 
 
-
+<h2>Task 3. Capture network traffic with tcpdump</h2>
 
 
 In this task, network analyst must identify the network interfaces that can be used to capture network packet data by using the command "sudo tcpdump -D"(can also use "sudo ifconfig") to identify the interfaces that are available. 
